@@ -206,4 +206,4 @@ elif pagina == "📋 Tabela de Valores":
 elif pagina == "💬 Mensagens de Pós-Consulta":
     exibir_mensagens()
 
-elif pagina == "💬 Mensagens de Avaliacao()
+elif pagina == "💬 Mensagens de Avaliacao()":
