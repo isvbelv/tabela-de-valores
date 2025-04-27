@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Benessere saúde integral", page_icon="🦧", layout="wide")
+st.set_page_config(page_title="Benessere saúde integral", page_icon="🩺", layout="wide")
 
 # Dicionário de serviços (valores atualizados e organizados)
 servicos = {
@@ -169,7 +169,7 @@ def exibir_mensagens_avaliacao():
     profissional = st.selectbox("Selecione o profissional:", list(avaliacoes_links.keys()))
     nome_paciente = st.text_input("Nome do paciente:")
 
-    if profissional == "Dra. Karol":
+    if profissional == "👩‍⚕️ Dra. Karol":
         mensagem = f"""Oi {nome_paciente}! Que bom saber que está tudo bem! 
 Se puder deixar uma avaliação para a Dra. Karol, ficaremos muito felizes. 
 Isso nos ajuda a continuar oferecendo o melhor atendimento! 
@@ -182,7 +182,7 @@ Obrigada pelo carinho e confiança! Estou sempre à disposição."""
 Se puder deixar uma avaliação para o Dr. Gabriel, seria ótimo. 
 Seu feedback é muito importante para nós! 
 
-É só clicar aqui: {avaliacoes_links['Dr. Gabriel']}
+É só clicar aqui: {avaliacoes_links['👨‍⚕️ Dr. Gabriel']}
 
 Muito obrigada! Seguimos à disposição para o que precisar."""
 
@@ -197,7 +197,7 @@ pagina = st.sidebar.selectbox("Navegue pelas páginas", [
 ])
 
 if pagina == "🏠 Início":
-    st.title("🦧 Tabela de Valores - Consultório Médico")
+    st.title("💰 Tabela de Valores - Consultório Médico")
     st.write("Bem-vinda! Consulte os valores organizados por categorias no menu lateral.")
 
 elif pagina == "📋 Tabela de Valores":
