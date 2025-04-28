@@ -73,7 +73,13 @@ procedimentos_mensagens = {
     "Retirada de Pólipos ou Cirurgia": "Oi [Nome], tudo bem? Aqui é a Isabela da Benessere!\nA Dra. Karol pediu para saber como você está se sentindo após o procedimento.\nSe precisar de algo ou tiver dúvidas, estou à disposição!",
 }
 
-# Função para exibir procedimentos
+# Links de avaliação
+avaliacoes_links = {
+    "Dra. Karol": "https://g.page/r/CW4RmAUUq1Q5EAE/review",
+    "Dr. Gabriel": "https://g.page/r/Ce1HPhS5Y8RaEBM/review"
+}
+
+# Funções para exibir as páginas
 def exibir_procedimentos():
     st.header("📋 Tabela de Valores do Consultório")
     st.markdown("### 👩‍⚕️ Consultas e Exames de Avaliação")
@@ -141,7 +147,6 @@ Para pessoas com deficiência de absorção:
 - 2 ampolas: R$ 400,00
 """)
 
-# Função para exibir mensagens
 def exibir_mensagens():
     st.header("💬 Mensagens de Pós-Consulta")
     tipo = st.radio("Selecione o tipo de mensagem:", ("Consultas", "Procedimentos"))
@@ -157,12 +162,6 @@ def exibir_mensagens():
         nome = st.text_input("Nome do paciente:")
         mensagem = procedimentos_mensagens[opcao].replace("[Nome]", nome if nome else "[Nome]")
         st.text_area("Mensagem", value=mensagem, height=200)
-
-# Função para exibir mensagens de avaliação
-avaliacoes_links = {
-    "Dra. Karol": "https://g.page/r/CW4RmAUUq1Q5EAE/review",
-    "Dr. Gabriel": "https://g.page/r/Ce1HPhS5Y8RaEBM/review"
-}
 
 def exibir_mensagens_avaliacao():
     st.header("💬 Mensagens de Avaliação no WhatsApp")
@@ -197,7 +196,7 @@ pagina = st.sidebar.selectbox("Navegue pelas páginas", [
 ])
 
 if pagina == "🏠 Início":
-    st.title("💰 Tabela de Valores - Consultório Médico")
+    st.title("🩺 Tabela de Valores - Consultório Médico")
     st.write("Bem-vinda! Consulte os valores organizados por categorias no menu lateral.")
 
 elif pagina == "📋 Tabela de Valores":
