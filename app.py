@@ -112,6 +112,24 @@ def exibir_procedimentos():
 - Outros: Preencher manualmente
 """)
 
+    st.markdown("### **Protocolo Mounjaro (8 semanas)**")
+    st.markdown("""
+Inclui:
+- 💉 Medicação Mounjaro semanal  
+- 🥗 Plano alimentar personalizado  
+- 💊 Injetáveis personalizados  
+- 🩺 Acompanhamento médico  
+- 📱 Suporte via WhatsApp  
+
+**1ª Etapa (semanas 1 a 4):**  
+- R$ 4.200,00 (cartão ou nota) — 4x de R$ 1.050,00  
+- R$ 3.780,00 (PIX ou dinheiro sem nota) — 4x de R$ 945,00
+
+**2ª Etapa (semanas 5 a 8):**  
+- R$ 6.800,00 (cartão ou nota) — 4x de R$ 1.700,00  
+- R$ 6.120,00 (PIX ou dinheiro sem nota) — 4x de R$ 1.530,00
+""")
+
     st.markdown("### 🛠️ Cirurgias e Procedimentos")
     st.markdown("""
 - Cirurgia I: R$ 600,00  
@@ -192,7 +210,8 @@ pagina = st.sidebar.selectbox("Navegue pelas páginas", [
     "🏠 Início",
     "📋 Tabela de Valores",
     "💬 Mensagens de Pós-Consulta",
-    "💬 Mensagens de Avaliação"
+    "💬 Mensagens de Avaliação",
+    "💬 Mensagem pré consulta MEVPLAN",
 ])
 
 if pagina == "🏠 Início":
@@ -207,3 +226,26 @@ elif pagina == "💬 Mensagens de Pós-Consulta":
 
 elif pagina == "💬 Mensagens de Avaliação":
     exibir_mensagens_avaliacao()
+
+elif pagina == "📩 Mensagem pré-consulta (MevPlan)":
+    st.title("📩 Mensagem pré-consulta - MevPlan")
+
+    nome_paciente = st.text_input("Digite o nome do paciente")
+
+    if nome_paciente:
+        mensagem = f"""
+Olá, {nome_paciente}, espero que esteja bem!
+
+Sou Isabela, faço parte da equipe do Dr. Gabriel Cardoso na Benessere Saúde Integral.
+
+Estou enviando um vídeo em que o doutor se apresenta e explica sobre um questionário importante que foi enviado pela nossa plataforma MevPlan.
+
+Qualquer dúvida, fico à disposição!
+
+Ah! E só lembrando que o questionário vai direto pela plataforma, para não acharem que o link é vírus.
+        """.strip()
+
+        st.markdown("### Mensagem gerada:")
+        st.code(mensagem)
+    else:
+        st.info("Digite o nome do paciente acima para gerar a mensagem.")
