@@ -233,8 +233,7 @@ elif pagina == "📩 Mensagem pré-consulta (MevPlan)":
     nome_paciente = st.text_input("Digite o nome do paciente")
 
     if nome_paciente:
-        mensagem = f"""
-Olá, {nome_paciente}, espero que esteja bem!
+        mensagem = f"""Olá, {nome_paciente}, espero que esteja bem!
 
 Sou Isabela, faço parte da equipe do Dr. Gabriel Cardoso na Benessere Saúde Integral.
 
@@ -243,18 +242,7 @@ Estou enviando um vídeo em que o doutor se apresenta e explica sobre um questio
 Qualquer dúvida, fico à disposição!
 
 Ah! E só lembrando que o questionário vai direto pela plataforma, para não acharem que o link é vírus.
-        """.strip()
-
-        st.markdown("### Mensagem gerada:")
-        st.code(mensagem)
-    else:
-        st.info("Digite o nome do paciente acima para gerar a mensagem.")
-
-Qualquer dúvida, fico à disposição!
-
-Ah! E só lembrando que o questionário vai direto pela plataforma, para não acharem que o link é vírus.
-        """.strip()
-
+"""
         st.markdown("### Mensagem gerada:")
         st.code(mensagem)
     else:
