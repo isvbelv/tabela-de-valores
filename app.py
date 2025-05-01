@@ -210,8 +210,7 @@ pagina = st.sidebar.selectbox("Navegue pelas páginas", [
     "🏠 Início",
     "📋 Tabela de Valores",
     "💬 Mensagens de Pós-Consulta",
-    "💬 Mensagens de Avaliação",
-    "💬 Mensagem pré consulta MEVPLAN"
+    "💬 Mensagens de Avaliação"
 ])
 
 if pagina == "🏠 Início":
@@ -227,23 +226,4 @@ elif pagina == "💬 Mensagens de Pós-Consulta":
 elif pagina == "💬 Mensagens de Avaliação":
     exibir_mensagens_avaliacao()
 
-elif pagina == "📩 Mensagem pré-consulta (MevPlan)":
-    st.title("📩 Mensagem pré-consulta - MevPlan")
 
-    nome_paciente = st.text_input("Digite o nome do paciente")
-
-    if nome_paciente:
-        mensagem = f"""Olá, {nome_paciente}, espero que esteja bem!
-
-Sou Isabela, faço parte da equipe do Dr. Gabriel Cardoso na Benessere Saúde Integral.
-
-Estou enviando um vídeo em que o doutor se apresenta e explica sobre um questionário importante que foi enviado pela nossa plataforma MevPlan.
-
-Qualquer dúvida, fico à disposição!
-
-Ah! E só lembrando que o questionário vai direto pela plataforma, para não acharem que o link é vírus.
-"""
-        st.markdown("### Mensagem gerada:")
-        st.code(mensagem)
-    else:
-        st.info("Digite o nome do paciente acima para gerar a mensagem.")
